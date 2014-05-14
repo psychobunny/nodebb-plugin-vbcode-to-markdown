@@ -1,0 +1,29 @@
+{
+  "name": "nodebb-plugin-vbcode-to-markdown",
+  "version": "0.0.1",
+  "description": "NodeBB BBCode to Markdown Plugin",
+  "main": "library.js",
+  "scripts": {
+    "test": "mocha ./tests -t 1000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/psychobunny/nodebb-plugin-vbcode-to-markdown"
+  },
+  "keywords": [
+    "nodebb",
+    "plugin",
+    "bbcode",
+    "converter",
+    "vbcode",
+    "vBulletin"
+  ],
+  "author": {
+    "name": "psychobunny",
+    "email": "psycho.bunny@hotmail.com"
+  },
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/psychobunny/nodebb-plugin-vbcode-to-markdown/issues"
+  }
+}
