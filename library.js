@@ -23,6 +23,7 @@ converter.parse = function(postContent, callback) {
 		.replace(/\[\S?color[\s\S]*?\]/gi, '')
 		.replace(/\[\S?b\]/gi, '**')
 		.replace(/\[url="(https?:[\s\S]*?)*?"\]([\s\S]*?)\[\/url*?\]/gi, '[$2]($1)')
+		.replace(/\[img]([\s\S]*?)\[\/img*?\]/gi, '![image]($1)')
 		.replace(/\[\S?url*?\]/gi, '')
 		.replace(/\[quote\]([\s\S]*?)\[\/quote\]/gi, '> $1')
 		.replace(/\[\S?[i|u]\]/gi, '*');
