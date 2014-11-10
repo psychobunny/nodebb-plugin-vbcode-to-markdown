@@ -5,6 +5,8 @@
 	"url": "https://github.com/psychobunny/nodebb-plugin-vbcode-to-markdown",
 	"library": "./library.js",
 	"hooks": [
-		{ "hook": "filter:post.parse", "method": "parse", "callbacked": true, "priority": 1 }
+		{
+			"hook": "filter:post.parse", "method": "parse", "priority": 1
+		}
 	]
 }
