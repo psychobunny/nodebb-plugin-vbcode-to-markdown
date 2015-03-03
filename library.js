@@ -26,6 +26,7 @@ converter.parse = function(postContent, callback) {
 		.replace(/\[img]([\s\S]*?)\[\/img*?\]/gi, '![image]($1)')
 		.replace(/\[\S?url*?\]/gi, '')
 		.replace(/\[quote\]([\s\S]*?)\[\/quote\]/gi, '> $1')
+		.replace(/\[vimeo\]([\s\S]*?)\[\/vimeo\]/gi, '$1')
 		.replace(/\[\S?[i|u]\]/gi, '*');
 
 	postContent = parseQuotes(postContent);
