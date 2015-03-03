@@ -18,9 +18,7 @@ function parseQuotes(content) {
 }
 
 converter.parse = function(data, callback) {
-	var postContent = data.postContent;
-	
-	postContent = postContent
+	data.postData.content = data.postData.content
 		.replace('&#58;', ':')
 		.replace(/\[\S?color[\s\S]*?\]/gi, '')
 		.replace(/\[\S?b\]/gi, '**')
@@ -31,8 +29,8 @@ converter.parse = function(data, callback) {
 		.replace(/\[vimeo\]([\s\S]*?)\[\/vimeo\]/gi, '$1')
 		.replace(/\[\S?[i|u]\]/gi, '*');
 
-	postContent = parseQuotes(postContent);
-	callback(null, postContent);
+	data.postData.content = parseQuotes(data.postData.content);
+	callback(null, data);
 };
 
 module.exports = converter;
