@@ -17,7 +17,9 @@ function parseQuotes(content) {
 	return content;
 }
 
-converter.parse = function(postContent, callback) {
+converter.parse = function(data, callback) {
+	var postContent = data.postContent;
+	
 	postContent = postContent
 		.replace('&#58;', ':')
 		.replace(/\[\S?color[\s\S]*?\]/gi, '')
