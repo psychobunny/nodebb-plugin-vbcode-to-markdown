@@ -2,8 +2,6 @@
 
 var converter = {};
 
-'http://player.vimeo.com/video/90083943'.replace(/(https?:\/\/)player.vimeo.com\/video\/([0-9]*?)/, '$1vimeo.com/$2');
-
 function parseQuotes(content) {
 	var quote, quoteBlock,
 		re = /\[quote=([\s\S]*?);[\S]*?\]([\s\S]*?)\[\/quote\]/gi;
@@ -27,7 +25,7 @@ converter.parse = function(data, callback) {
 		.replace(/\[\S?url*?\]/gi, '')
 		.replace(/\[quote\]([\s\S]*?)\[\/quote\]/gi, '> $1')
 		.replace(/\[vimeo\]([\s\S]*?)\[\/vimeo\]/gi, '$1')
-		.replace(/(https?:\/\/)player.vimeo.com\/video\/([0-9]*?)/, '$1vimeo.com/$2');
+		.replace(/(https?:\/\/)player.vimeo.com\/video\/([0-9]*?)/, '$1vimeo.com/$2')
 		.replace(/\[\S?[i|u]\]/gi, '*');
 
 	data.postData.content = parseQuotes(data.postData.content);
