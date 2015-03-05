@@ -4,11 +4,11 @@ var converter = {};
 
 function parseQuotes(content) {
 	var quote, quoteBlock,
-		re = /\[quote=([\s\S]*?);[\S]*?\]([\s\S]*?)\[\/quote\]/gi;
+		re = /\[quote=([\s\S]*?)(;[\S]*?)?\]([\s\S]*?)\[\/quote\]/gi;
 
 	while(quote = content.match(re)) {
 		quote = quote[0];
-		quoteBlock = quote.replace(re, '@$1 said:\r\n $2').replace(/\r\n/g, '\r\n>');
+		quoteBlock = quote.replace(re, '@$1 said:\r\n $3').replace(/\r\n/g, '\r\n>');
 		content = content.replace(quote, quoteBlock);
 	}
 
