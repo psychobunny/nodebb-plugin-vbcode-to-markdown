@@ -24,6 +24,7 @@ converter.parse = function(data, callback) {
 		.replace(/\[img]([\s\S]*?)\[\/img*?\]/gi, '![image]($1)')
 		.replace(/\[\S?url*?\]/gi, '')
 		.replace(/\[quote\]([\s\S]*?)\[\/quote\]/gi, '> $1')
+		.replace(/\[code\]([\s\S]*?)\[\/code\]/gi, '```\r\n$1\r\n```')
 		.replace(/\[vimeo\]([\s\S]*?)\[\/vimeo\]/gi, '$1')
 		.replace(/(https?:\/\/)player.vimeo.com\/video\/([0-9]*?)/, '$1vimeo.com/$2')
 		.replace(/\[\S?[i|u]\]/gi, '*');
